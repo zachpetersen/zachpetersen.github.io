@@ -77,9 +77,8 @@ $(document).ready(function(){
     $('.fa-map-marker').on('click', function(){
         
         /// get all vessel location info
-        $('#content').empty().append.$('#bigmaptemplate').html();
-        
-
+        $('#content').empty().append($('#bigmaptemplate').html());
+ 
     });
 
     /// Subsection Expansion

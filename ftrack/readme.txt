@@ -8,7 +8,7 @@ ToDo:
 [X]3) Reactive - break Vessel sections - remove float
 []4) Add menu
 []	a. View vessels by Vessel Class (not css class)
-[]5) Add gmaps vessel location, bearing, speed
+[X]5) Add gmaps vessel locationS
 []6) replace the Lato font. Its terrible.
 []7) If time allows do the same thing for Terminals
 	a. Terminal status
