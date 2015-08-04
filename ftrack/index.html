@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FerryTracker</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="./css/normalize.css" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700|Roboto:400,700,900" rel="stylesheet" type="text/css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header>
+		<h1>FerryTracker</h1>
+
+		<div class="iconmenu">
+			<i class="icon fa fa-ship fa-2x"></i>
+			<i class="icon fa fa-map-marker fa-2x"></i>
+		</div>
+
+		<div class="hamburgermenu hidden">
+			<i class="hamburger fa fa-bars fa-2x"></i>
+		</div>
+
+		<div class="dropmenu hidden"></div>
+	</header>
+
+	<div id="content">
+		<script id="vessellist" type="x-tmpl-mustache">
+				<section data-vessel-class="{{Class.PublicDisplayName}}" class="vessel clearfix">
+					<span class="vesselname">M/V {{VesselName}}</span><span class="vesselabbrev">({{VesselAbbrev}})</span>
+					<div class="vesselmain">
+						<img src="{{Class.DrawingImg}}">
+						<p>The <span class="vesselnamedesc">{{VesselName}}</span> is an {{Class.PublicDisplayName}} class vessel built in {{YearBuilt}}{{#YearRebuilt}} and refitted in {{YearRebuilt}}{{/YearRebuilt}}.</p> 
+						<div class="vesselnamedesc">
+							<p><span>About the name: </span>{{VesselNameDesc}}</p>
+						</div>
+					</div>
+					<div class="vessellocation clearfix">
+						<h3 class="vloc" data-vessel-id="{{VesselID}}"><i class="fa fa-plus-square-o"></i>Vessel Location</h3>
+						<div id="map_{{VesselAbbrev}}" class="subsection map hidden">
+                            
+					   </div>
+					</div>                    
+					<div class="vesselstats clearfix">
+						<h3><i class="fa fa-plus-square-o"></i>Passenger Information</h3>
+						<div class="subsection hidden">
+							<ul>
+								<li><span>Passengers:</span> {{MaxPassengerCount}}</li>
+								<li><span>Vehicles:</span> {{RegDeckSpace}}</li>
+								<li><span>Tall Deck Spaces:</span> {{TallDeckSpace}}</li>
+								<li><span>Tall Deck Clearance:</span> {{TallDeckClearance}}</li>
+							</ul>
+							<div class="vesselfeatures">
+								<p>Features:</p>
+								<span class="fa-stack fa-lg">
+									<i class="fa fa-wheelchair fa-stack-1x"></i>
+									<i class="fa {{^ADAAccessible}}fa-ban{{/ADAAccessible}} fa-stack-2x text-danger"></i>
+								</span>
+								<span class="fa-stack fa-lg">
+									<i class="fa fa-wifi fa-stack-1x"></i>
+									<i class="fa {{^PublicWifi}}fa-ban{{/PublicWifi}} fa-stack-2x text-danger"></i>
+								</span>
+								<span class="fa-stack fa-lg">
+									<i class="fa fa-cutlery fa-stack-1x"></i>
+									<i class="fa {{^MainCabinGalley}}fa-ban{{/MainCabinGalley}} fa-stack-2x text-danger"></i>
+								</span>
+						   </div>
+					   </div>
+					</div>
+				   <div class="vesseladainfo clearfix">
+						<h3><i class="fa fa-plus-square-o"></i>ADA Information:</h3>
+						<div class="subsection hidden">
+							<p>{{ADAInfo}}</p>
+						</div>
+				   </div>
+					<div class="vesseldetails clearfix">
+						<h3><i class="fa fa-plus-square-o"></i>Vessel Details</h3>
+						<div class="subsection hidden">
+							<ul>
+								<li><span>Length:</span> {{Length}}</li>
+								<li><span>Beam:</span> {{Beam}}</li>
+								<li><span>Draft:</span> {{Draft}}</li>
+								<li><span>Displacement:</span> {{Displacement}} long tons</li>
+							</ul>
+							<ul>
+								<li><span>Engines:</span> {{EngineCount}}</li>
+								<li><span>Propulsion:</span> {{PropulsionInfo}}</li>
+								<li><span>Horsepower:</span> {{Horsepower}}</li>
+								<li><span>Speed:</span> {{SpeedInKnots}} knots</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+		</script> <!-- Mustache Rendered Block -->
+		<script id="bigmaptemplate" type="x-tmpl-mustache">
+			<div id="bigmap"></div>
+		</script>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script src="./js/mustache.min.js"></script>
+	<script src="./js/script.js"></script>
+	<script src="./js/ftmaps.js"></script>
+</body>
+</html>
