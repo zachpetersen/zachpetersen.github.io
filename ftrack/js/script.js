@@ -77,6 +77,10 @@ $(document).ready(function(){
     $('.fa-map-marker').on('click', function(){
         
         /// get all vessel location info
+     /*   wsfApiGet("vlocall").done(function(data) {
+            bigftmap(data, mc);
+            });
+        }; */
         $('#content').empty().append($('#bigmaptemplate').html());
  
     });

@@ -24,10 +24,4 @@ function bigftmap(vloc, canvas){
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
 	
-	markers[i] = new google.maps.Marker({
-      position: {lat:vloc.Latitude, lng:vloc.Longitude},
-      map: bigmap,
-      html: vloc.VesselName,
-      id: vloc.VesselID
-    });
 }
