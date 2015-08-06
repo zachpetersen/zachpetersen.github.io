@@ -14,19 +14,12 @@
 		<h1>FerryTracker</h1>
 
 		<div class="iconmenu">
-			<i class="icon fa fa-ship fa-2x"></i>
+			<i class="icon hidden fa fa-ship fa-2x"></i>
 			<i class="icon fa fa-map-marker fa-2x"></i>
 		</div>
 
-		<div class="hamburgermenu hidden">
-			<i class="hamburger fa fa-bars fa-2x"></i>
-		</div>
-
-		<div class="dropmenu hidden"></div>
 	</header>
-
-	<div id="content">
-		<script id="vessellist" type="x-tmpl-mustache">
+<script id="vessellist" type="x-tmpl-mustache">
 				<section data-vessel-class="{{Class.PublicDisplayName}}" class="vessel clearfix">
 					<span class="vesselname">M/V {{VesselName}}</span><span class="vesselabbrev">({{VesselAbbrev}})</span>
 					<div class="vesselmain">
@@ -93,9 +86,8 @@
 					</div>
 				</section>
 		</script> <!-- Mustache Rendered Block -->
-		<script id="bigmaptemplate" type="x-tmpl-mustache">
-			<div id="bigmap"></div>
-		</script>
+	<div id="content">
+		
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>

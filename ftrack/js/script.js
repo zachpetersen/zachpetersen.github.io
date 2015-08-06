@@ -66,24 +66,42 @@ $(document).ready(function(){
         }
     });
 
-    /// Menu Expansion
-    $('.hamburger, .fa-ship').on('click', function(){
+    /// Menu Expansion - removed
+   /* $('.hamburger, .fa-ship').on('click', function(){
         $('.dropmenu').toggleClass('hidden');
-        /*if( $(this).hasClass("hamburger") ){
+        if( $(this).hasClass("hamburger") ){
             
-        }*/
-    });
+        }
+    });*/
     
     $('.fa-map-marker').on('click', function(){
-        
+        $('.fa-ship').toggleClass('hidden');
+        $('.fa-map-marker').toggleClass('hidden');
+        $('#content').empty();
+        $('#content').append('<div id="fullmap"></div>');
         /// get all vessel location info
-     /*   wsfApiGet("vlocall").done(function(data) {
-            bigftmap(data, mc);
+        wsfApiGet("vlocall").done(function(data) {
+            console.log(data);
+            bigftmap(data, "fullmap");
             });
-        }; */
-        $('#content').empty().append($('#bigmaptemplate').html());
- 
-    });
+        });
+        
+     $('.fa-ship').on('click', function(){
+        $('.fa-ship').toggleClass('hidden');
+        $('.fa-map-marker').toggleClass('hidden');
+        $('#content').empty();
+        wsfApiGet("vverbose").done(function(data) {
+          for (var i = 0; i < data.length; i++) {
+              LoadVessels(data[i]);
+          }
+        });
+        });
+        
+        $( window ).resize(function() {
+            google.maps.event.trigger(bigmap, 'resize');
+            bigmap.setCenter(currCenter);
+        });
+        
 
     /// Subsection Expansion
     $(document).on('click', '.vessel h3', function(){
