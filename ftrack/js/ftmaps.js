@@ -43,7 +43,7 @@ function bigftmap(vloc, canvas){{
       google.maps.event.addListenerOnce(infowindow, 'closeclick', function(){
         markers[this.id].setVisible(true);
       });
-      this.setVisible(false);
+      this.setVisible(true);
       infowindow.open(bigmap);
     });
   }
