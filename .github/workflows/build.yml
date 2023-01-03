@@ -22,7 +22,7 @@ jobs:
           deno task build --location=https://e53.org/
 
       - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v2.0.1
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           build_dir: _site
         env:
