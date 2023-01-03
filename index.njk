@@ -1,0 +1,23 @@
+---
+layout: layouts/home.njk
+menu:
+  visible: true
+  title: Home
+  order: 0
+---
+
+{% set postslist = search.pages("type=posts", "date=desc", 10) %}
+
+<h1>Latest Posts</h1>
+
+{% include "templates/postslist.njk" %}
+
+<hr>
+
+{% set postslist  = search.pages("pinned=true") %}
+
+{%if postslist.length %}
+  <h2>Pinned Post:</h1>
+  {% include "templates/postslist.njk" %}
+  <hr>
+{% endif %}
