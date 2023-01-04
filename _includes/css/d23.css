@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+
+.grid-col-span-2 {
+    grid-column: span 2;
+}
+
+.grid-row-span-2 {
+    grid-row: span 2;
+}
+
+.d23daily-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.d23daily-titlebar {
+    font-display: wrap;
+}
+
+.d23daily-title {
+    font-family: 'Rubik Bubbles', cursive;
+}
+
+.d23daily-subtitle {
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.d23daily-griditem-metadata {
+
+}
+
+.d23daily-griditem-encounters {
+
+}
+
+.d23daily-map {
+
+}
+
+.d23daily-griditem-map img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.d23daily-griditem-notes {
+
+}
+
+@media screen and (max-width: 40em) {
+    .d23daily-griditem-map {
+        grid-row: 1;    
+    }
+
+}
